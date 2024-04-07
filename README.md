@@ -1,12 +1,17 @@
 # Web-Dev-Project
-Football Web Application
+
+In this work, we want to present our project about football
+
+# Football Web Application
 
 This web development project focuses on football, aiming to provide information about players, teams, and coaches. The application utilizes HTML, CSS, and JavaScript for frontend development, while employing Node.js and Express.js for backend functionalities.
-Team Members
+
+# Team Members:
 
     Abdullaev Shakhzod (22B031601) - Frontend Developer
+    Bagytzhan Zhalgas (22B030317) - Backend Developer
 
-Technologies Used
+# Technologies Used:
 
     HTML
     CSS
@@ -14,7 +19,7 @@ Technologies Used
     Node.js
     Express.js
 
-Features
+# Features:
 
     /players:
         Displays a list of all existing players.
