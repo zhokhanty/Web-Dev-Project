@@ -9,6 +9,7 @@ Abdullaev Shakhzod 22B031601
 
 
 Features
+
 /players: This route displays a list of all existing players. Users can view details such as player name, position, nationality, and other relevant information.
 
 /teams: The teams route showcases information about different football teams. Users can explore details about team name, coach, stadium, and player roster.
