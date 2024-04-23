@@ -12,9 +12,10 @@ class Coach(models.Model):
 class League(models.Model):
     name = models.CharField(max_length=50)
     country = models.CharField(max_length=100)
+    image_url = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"name: {self.name}, country: {self.country}"
+        return f"name: {self.name}, country: {self.country}, image: {self.image_url}"
 
 class Team(models.Model):
     name = models.CharField(max_length=100)

@@ -9,7 +9,7 @@ class CoachSerializer(serializers.ModelSerializer):
 class LeagueSerializer(serializers.ModelSerializer):
     class Meta:
         model = League
-        fields = ['id', 'name']
+        fields = ['id', 'name', 'country', 'image_url']
 
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:

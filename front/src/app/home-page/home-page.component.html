@@ -1,0 +1,9 @@
+<ul class="container-league">
+    <li *ngFor="let l of leagues" class="item">
+        <a [routerLink]="['league_details/', l.id]">
+            <img [src]="l.image_url" alt="{{l.name}}">
+            <span class="item-text">{{ l.name }}</span>
+        </a>
+    </li>
+</ul>
+  

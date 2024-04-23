@@ -141,3 +141,33 @@ def player_detail(request, id):
     elif request.method == 'DELETE':
         player.delete()
         return JsonResponse({"This player is deleted": True})
+    
+def team_player_list(request, id=None):
+    try:
+        team = Team.objects.get(id=id)
+    except Team.DoesNotExist:
+        return JsonResponse({"Team Not Found": "Team does not exist"}, status=status.HTTP_404_NOT_FOUND)
+
+    players = team.players.all()
+    serializer = PlayerSerializer(players, many=True)
+    return JsonResponse(serializer.data, safe=False)
+
+def league_team_list(request, id=None):
+    try:
+        league = League.objects.get(id=id)
+    except League.DoesNotExist:
+        return JsonResponse({"League Not Found": "League does not exist"}, status=status.HTTP_404_NOT_FOUND)
+    
+    teams = league.teams.all()
+    serializer = TeamSerializer(teams, many=True)
+    return JsonResponse(serializer.data, safe=False)
+
+def coach_team(request, id=None):
+    try:
+        coach = Coach.objects.get(id=id)
+    except Coach.DoesNotExist:
+        return JsonResponse({"Coach Not Found": "Coach does not exist"}, status=status.HTTP_404_NOT_FOUND)
+    
+    teams = coach.teams.all()
+    serializer = TeamSerializer(teams, many=True)
+    return JsonResponse(serializer.data, safe=False)
