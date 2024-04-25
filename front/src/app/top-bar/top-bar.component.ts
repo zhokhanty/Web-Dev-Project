@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,5 +9,13 @@ import { RouterModule } from '@angular/router';
   styleUrl: './top-bar.component.css'
 })
 export class TopBarComponent {
+  constructor(private router: Router) { }
+  navigateToSignUp() {
+    
+    this.router.navigate(['signup']);
+  }
 
+  navigateToSignIn(){
+      this.router.navigate(['signin']);
+  }
 }

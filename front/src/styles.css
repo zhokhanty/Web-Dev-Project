@@ -1,34 +1,127 @@
-/* styles.css */
-
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    display: grid;
-    justify-content: flex-start;
-    text-align: left;
-  }
-  
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    max-width: 960px;
-    font-size: 36px;
-    color: whitesmoke;
-    margin: 0 35px;
-    padding: 20px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s ease;
-  }
-  
-  a:hover {
-    color: #0056b3;
-  }
+  background-color: #010a0f;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 150px;
+}
+
+.box {
+  flex: 1 1 60%;
+  border: 1px solid #ccc; 
+  color: white;
+  padding: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.league-box .box-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.league-box .box-subtitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.league-teams {
+  text-align: left;
+  padding: 10px;
+}
+
+.match {
+  margin-bottom: 10px;
+}
+
+.error-message {
+  font-size: 18px;
+  color: red;
+}
+
+.league-list {
+  flex: 1 1 30%;
+  list-style: none;
+  padding: 0;
+}
+
+.league-item {
+  margin-bottom: 10px;
+}
+
+.league-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.team-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.league-image {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.league-name {
+  font-size: 18px;
+}
+
+.item-text {
+  color: #fff;
+}
+
+.item-text:hover {
+  color: #c80037;
+}
+
+.top-bar {
+  background-color: #001e28;
+  padding: 20px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-bar h1 {
+  padding: 15px;
+  margin: 0;
+  font-size: 24px;
+  display: inline-block;
+}
+
+.top-bar h2 {
+  color: white;
+  padding: 5px;
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+}
+
+.top-bar img {
+  width: 24px;
+  margin-bottom: -3px;
+}

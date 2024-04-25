@@ -3,5 +3,5 @@ export interface Team {
     name: string;
     year: number;
     coach: string;
-    league: number
+    league: number;
 }

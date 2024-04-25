@@ -20,8 +20,8 @@ class League(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=100)
     year = models.IntegerField()
-    coach = models.ForeignKey(Coach, on_delete=models.CASCADE, related_name="coach")
-    league = models.ForeignKey(League, on_delete=models.CASCADE, related_name="league")
+    coach = models.ForeignKey(Coach, on_delete=models.CASCADE, related_name="teams")
+    league = models.ForeignKey(League, on_delete=models.CASCADE, related_name="teams")
 
     def __str__(self):
         return f"name: {self.name}, year: {self.year}, coach: {self.coach.first_name and self.coach.last_name}, league: {self.league.name}"
@@ -33,7 +33,7 @@ class Player(models.Model):
     age = models.IntegerField()
     country = models.CharField(max_length=50)
     position = models.CharField(max_length=50)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team")
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="players")
 
     def __str__(self):
         return f"first_name: {self.first_name}, last_name: {self.last_name}, cost: {self.cost}, age: {self.age}, country: {self.country}, position: {self.position}, team: {self.team.name}"

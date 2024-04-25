@@ -1,0 +1,12 @@
+<app-top-bar></app-top-bar>
+
+<div class="league-teams">
+    <div *ngIf="team; else error">
+        <span class="item-text">{{ team.name }}</span>
+        <span class="item-text">{{ team.year }}</span>
+    </div>
+</div>
+
+<ng-template #error>
+    <p class="error-message">Error</p>
+</ng-template>

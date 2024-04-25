@@ -1,1 +1,21 @@
-<p>league-details works!</p>
+<app-home-page></app-home-page>
+
+<div class="container container-home">
+    <div *ngIf="league; else error" class="box league-box">
+        <h2 class="box-title">{{ league.name }}</h2>
+        <li *ngFor="let t of teams" class="league-teams">
+            <a [routerLink]="['team_details/', t.id]" class="team-link">
+                <span class="item-text team-name">{{ t.name }}</span>
+            </a>
+        </li>
+        <h3 class="box-subtitle">Tournament Results</h3>
+        <div *ngFor="let result of tournamentResults" class="match">
+            <div>{{ result.homeTeam.name }} vs {{ result.awayTeam.name }}</div>
+            <div>{{ result.homeScore }} - {{ result.awayScore }}</div>
+        </div>
+    </div>
+</div>
+
+<ng-template #error>
+    <p class="error-message">Error</p>
+</ng-template>

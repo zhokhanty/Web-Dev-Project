@@ -1,14 +1,10 @@
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from rest_framework import status
-from .models import Coach, League, Team, Player
-from .serializers import CoachSerializer, LeagueSerializer, TeamSerializer, PlayerSerializer
 
-from django.http import JsonResponse
-from rest_framework.decorators import api_view
-from rest_framework import status
 from .models import Coach, League, Team, Player
 from .serializers import CoachSerializer, LeagueSerializer, TeamSerializer, PlayerSerializer
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 @api_view(['GET', 'POST'])
 def list_of_coaches(request):
@@ -141,7 +137,8 @@ def player_detail(request, id):
     elif request.method == 'DELETE':
         player.delete()
         return JsonResponse({"This player is deleted": True})
-    
+
+@csrf_exempt  
 def team_player_list(request, id=None):
     try:
         team = Team.objects.get(id=id)
@@ -152,6 +149,7 @@ def team_player_list(request, id=None):
     serializer = PlayerSerializer(players, many=True)
     return JsonResponse(serializer.data, safe=False)
 
+@csrf_exempt
 def league_team_list(request, id=None):
     try:
         league = League.objects.get(id=id)
@@ -162,6 +160,7 @@ def league_team_list(request, id=None):
     serializer = TeamSerializer(teams, many=True)
     return JsonResponse(serializer.data, safe=False)
 
+@csrf_exempt
 def coach_team(request, id=None):
     try:
         coach = Coach.objects.get(id=id)
@@ -170,4 +169,4 @@ def coach_team(request, id=None):
     
     teams = coach.teams.all()
     serializer = TeamSerializer(teams, many=True)
-    return JsonResponse(serializer.data, safe=False)
+    return JsonResponse(serializer.data, safe=False)   

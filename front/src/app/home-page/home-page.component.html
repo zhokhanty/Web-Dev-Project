@@ -1,9 +1,8 @@
-<ul class="container-league">
-    <li *ngFor="let l of leagues" class="item">
-        <a [routerLink]="['league_details/', l.id]">
-            <img [src]="l.image_url" alt="{{l.name}}">
-            <span class="item-text">{{ l.name }}</span>
+<ul class="container container-home league-list">
+    <li *ngFor="let l of leagues" class="item league-item">
+        <a [routerLink]="['league_details/', l.id]" class="league-link">
+            <img [src]="l.image_url" alt="{{l.name}}" class="league-image">
+            <span class="item-text league-name">{{ l.name }}</span>
         </a>
     </li>
 </ul>
-  
