@@ -21,14 +21,15 @@ This web development project focuses on football, aiming to provide information 
 
 # Features:
 
-    /players:
-        Displays a list of all existing players.
-        Users can view details such as player name, position, nationality, and other relevant information.
-
-    /teams:
-        Showcases information about different football teams.
-        Users can explore details about team name, coach, stadium, and player roster.
-
-    /coaches:
-        Provides insights into football coaches associated with various teams.
-        Users can access details about coach name, nationality, coaching experience, and team affiliation.
+    /Leagues:
+        View information about different football leagues from around the world.
+        Explore details such as league standings, top scorers, and upcoming fixtures.
+        Filter leagues by country or competition level.
+    /Teams:
+        Browse through a comprehensive list of football teams participating in various leagues.
+        Get insights into team statistics, squad members, and recent performance.
+        Search for teams by name, country, or league affiliation.
+    /Coaches:
+        Learn about the coaches leading football teams to victory.
+        Access profiles detailing their career history, coaching philosophy, and achievements.
+        Discover coaching staff for individual teams and their roles.
